@@ -1,0 +1,21 @@
+// Main text 14px / ln 21 px to 18px / ln 27 px
+// Profile role 10px to 12px
+// Profile name 14px to 18px
+
+:root {
+
+    --fs-main:1.4rem;
+    --fs-pr-role:1rem;
+    --fs-pr-name:1.4rem;
+
+    --ff-clr:#000;
+
+    @media (min-width:144em) {
+        
+        --fs-main:1.8rem;
+        --fs-pr-role:1.2rem;
+        --fs-pr-name:1.8rem;
+    
+    }
+
+}

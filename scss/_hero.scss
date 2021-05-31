@@ -1,0 +1,16 @@
+.hero {
+    
+    display: flex;
+    justify-content: center;
+    margin: 7.8rem 0 13rem 0;
+}
+.profile__container {
+    width: 100%;
+    max-width: 380px;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 64px 5px;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
