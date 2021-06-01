@@ -350,11 +350,19 @@ template {
 body {
   padding: 0 1.9rem;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main {
   position: relative;
   min-height: 100vh;
+  max-width: 375px;
+  width: 100%;
 }
 
 img {
@@ -375,6 +383,28 @@ footer {
   color: #A9A9A9;
 }
 
+@media screen and (min-width: 90em) {
+  body {
+    display: block;
+    padding: 0 24rem;
+  }
+  main {
+    max-width: unset;
+  }
+  header {
+    margin: 7.1rem 0 3.8rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 :root {
   --fs-main:1.4rem;
   --fs-pr-role:1rem;
@@ -382,7 +412,7 @@ footer {
   --ff-clr:#000;
 }
 
-@media (min-width: 144em) {
+@media (min-width: 90em) {
   :root {
     --fs-main:1.8rem;
     --fs-pr-role:1.2rem;
@@ -412,7 +442,17 @@ footer {
   max-width: 333px;
 }
 
+@media screen and (min-width: 90em) {
+  .header__text {
+    margin: 0;
+  }
+  p {
+    max-width: 438px !important;
+  }
+}
+
 .hero {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -424,29 +464,52 @@ footer {
 
 .profile__container {
   width: 100%;
-  max-width: 380px;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
   justify-items: center;
-  gap: 64px 5px;
+  gap: 64px 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 90em) {
+  .profile__container {
+    -ms-grid-columns: (0fr)[3];
+        grid-template-columns: repeat(3, 0fr);
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: unset;
+  }
+}
+
+.profile {
+  width: 100%;
+  -webkit-animation: 3s ease-in-out 0s infinite alternate moving;
+          animation: 3s ease-in-out 0s infinite alternate moving;
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
 }
 
 .profile .profile__main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 156px;
+  width: 100%;
 }
 
 .profile figcaption {
   text-transform: uppercase;
   font-family: PT Serif;
   line-height: 13px;
-  padding-left: 0.6rem;
+  padding-left: 0.5rem;
   font-size: var(--fs-pr-role);
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
@@ -462,11 +525,60 @@ footer {
   font-size: var(--fs-pr-name);
 }
 
-.profile:nth-child(2) {
+.profile:nth-child(2), .profile:nth-child(6) {
   padding-top: 5.5rem;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 
 .profile:nth-child(3), .profile:nth-child(5) {
   margin-top: -5.5rem;
+}
+
+.profile:nth-child(4) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes moving {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes moving {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+.profile:hover {
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
+}
+
+@media screen and (min-width: 90em) {
+  .profile {
+    width: 200px !important;
+  }
+  .profile:nth-child(3), .profile:nth-child(5) {
+    margin-top: unset;
+  }
+  .profile:nth-child(4), .profile:nth-child(6) {
+    margin-top: -5.5rem;
+  }
+  figcaption {
+    padding-left: 1rem !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */

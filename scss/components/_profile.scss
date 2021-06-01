@@ -1,15 +1,18 @@
 .profile {
-    
+    width: 100%;
+    animation: 3s ease-in-out 0s infinite alternate moving;
+    transition: filter 1s;
     .profile__main {
         display: flex;
-        max-width: 156px;
+        width: 100%;
     }
 
     figcaption {
+       
         text-transform: uppercase;
         font-family: PT Serif;
         line-height: 13px;
-        padding-left: 0.6rem ;
+        padding-left: 0.5rem;
         font-size: var(--fs-pr-role);
         writing-mode: vertical-rl;
         text-orientation: mixed;
@@ -25,10 +28,52 @@
     font-size: var(--fs-pr-name);
 }
 
-.profile:nth-child(2) {
+.profile:nth-child(2), .profile:nth-child(6) {
     padding-top: 5.5rem;
+    animation-delay: 2s;
 }
 
 .profile:nth-child(3) , .profile:nth-child(5)  {
     margin-top: -5.5rem;
+    
+}
+
+.profile:nth-child(4)  {
+    animation-delay: 1s;
+}
+
+// Animations
+@keyframes moving {
+    0% {
+        transform: translateY(0px);
+        
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+// Hover
+.profile:hover {
+    filter: saturate(0);
+}
+
+@media screen and (min-width:90em) {
+
+    .profile {
+        width: 200px !important;
+    }
+    
+    .profile:nth-child(3) , .profile:nth-child(5)  {
+        margin-top: unset;
+    }
+
+    .profile:nth-child(4) ,  .profile:nth-child(6){
+        margin-top: -5.5rem;
+    }
+
+    figcaption {
+        padding-left: 1rem !important;
+    }
+
 }

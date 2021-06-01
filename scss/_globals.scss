@@ -3,11 +3,15 @@
 body {
     padding: 0 1.9rem;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 main {
     position: relative;
     min-height: 100vh;
+    max-width: 375px;
+    width: 100%;
 }
 
 
@@ -23,4 +27,21 @@ footer {
     font-family: Montserrat;
     font-weight: 700;
     color: #A9A9A9;
+}
+
+@media screen and (min-width:90em) {
+    body {
+        display: block;
+        padding: 0 24rem;
+    }
+    main {
+        max-width: unset;
+    }
+
+    header {
+        margin: 7.1rem 0 3.8rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }

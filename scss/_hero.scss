@@ -1,16 +1,25 @@
 .hero {
-    
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 7.8rem 0 13rem 0;
+    
 }
 .profile__container {
     width: 100%;
-    max-width: 380px;
     display: grid;
     align-content: center;
     justify-items: center;
-    gap: 64px 5px;
+    gap: 64px 50px;
+    justify-content:space-between;
     grid-template-columns: repeat(2, 1fr);
-    
+}
+
+@media screen and (min-width:90em) {
+
+    .profile__container {
+        grid-template-columns: repeat(3, 0fr);
+        justify-content: space-between;
+        max-width: unset;
+    }
 }
